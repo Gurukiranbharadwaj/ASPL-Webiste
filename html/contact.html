@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ASPL Tech Solutions</title>
+
+    <!-- Favicon -->
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="../assets/images/logos/favicon.svg"
+    />
+
+    <!-- CSS Libraries -->
+    <link
+      rel="stylesheet"
+      href="../assets/libs/owl.carousel/dist/assets/owl.carousel.min.css"
+    />
+    <link rel="stylesheet" href="../assets/libs/aos-master/dist/aos.css" />
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="../assets/css/styles.css" />
+
+    <!-- Custom Button/Form Style -->
+    <style>
+      .option-buttons {
+        display: flex;
+        gap: 12px;
+        margin-bottom: 20px;
+      }
+
+      .btn-option {
+        flex: 1;
+        padding: 12px;
+        font-size: 16px;
+        border-radius: 10px;
+        border: none;
+        background: #007bff;
+        color: white;
+        cursor: pointer;
+        transition: 0.3s ease;
+      }
+
+      .btn-option:hover {
+        background: #005fcc;
+      }
+
+      .form-box {
+        display: none;
+        background: #f9f9f9;
+        padding: 20px;
+        border-radius: 12px;
+        border: 1px solid #ddd;
+        margin-top: 20px;
+        align-items: center;
+      }
+
+      .form-box h4 {
+        margin-bottom: 15px;
+        font-weight: 600;
+      }
+
+      .form-control,
+      select,
+      textarea {
+        margin-bottom: 15px;
+      }
+
+      /* ......................... */
+
+      .form-control {
+        border: none;
+        border-bottom: 2px solid #343035;
+        border-radius: 0;
+        outline: none;
+        box-shadow: none;
+      }
+
+      .form-control:focus {
+        border-bottom-color: #ff8100;
+        /* change color on focus */
+      }
+
+      .btn-option {
+        background-color: #ff8100;
+      }
+
+      .form-control {
+        border: none;
+        border-bottom: 2px solid #aaa;
+        border-radius: 0;
+        outline: none;
+        box-shadow: none;
+        padding-left: 0;
+        background-color: transparent;
+      }
+
+      /* Custom Select Dropdown */
+      select.form-control {
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background-image: url("https://cdn-icons-png.flaticon.com/512/32/32195.png");
+        background-repeat: no-repeat;
+        background-size: 16px;
+        background-position: right 5px center;
+        cursor: pointer;
+      }
+      .btn {
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+        width: auto;
+        background-color: #ff8100;
+        color: #fff;
+      }
+      .btn:hover {
+        background-color: #005fcc;
+        color: #fff;
+      }
+      .lfc {
+        padding-top: 3% !important;
+      }
+
+      .msg {
+        display: none; /* hidden by default */
+        padding: 12px 18px;
+        margin-top: 15px;
+        width: 100%;
+        box-sizing: border-box;
+
+        background: #c8ffc8; /* light green box */
+        border: 2px solid #22bb33; /* green border */
+        border-radius: 8px;
+
+        color: #000; /* black text */
+        font-size: 16px;
+        font-weight: 600;
+      }
+    </style>
+
+    <style>
+      /* Parent container - fixed to right side */
+      .floating-buttons {
+        position: fixed;
+        bottom: 10%;
+        right: 5%;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        z-index: 9999;
+      }
+
+      /* WhatsApp Button */
+      .whatsapp-float {
+        width: 60px;
+        height: 60px;
+        background-color: #25d366;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        cursor: pointer;
+      }
+
+      /* WhatsApp Icon */
+      .whatsapp-float img {
+        width: 35px;
+        height: 35px;
+      }
+
+      /* Scroll-to-top button */
+      .scroll-btn {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      /* Pulse Animation */
+      .pulse {
+        animation: pulseAnimation 1.5s ease-out infinite;
+      }
+
+      @keyframes pulseAnimation {
+        0% {
+          transform: scale(1);
+          box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+        }
+        70% {
+          transform: scale(1.05);
+          box-shadow: 0 0 0 18px rgba(37, 211, 102, 0);
+        }
+        100% {
+          transform: scale(1);
+          box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+        }
+      }
+    </style>
+    <style>
+      .bg-video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 0;
+        opacity: 1; /* adjust if needed */
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="header position-fixed start-0 top-0 w-100">
+      <div class="container">
+        <div
+          class="header-wrapper d-flex align-items-center justify-content-between"
+        >
+          <div class="logo">
+            <a href="index.html" class="logo-white">
+              <img
+                src="https://aspltech.in/images/logo.png"
+                alt="logo"
+                class="img-fluid"
+                style="max-width: 130px; height: auto"
+              />
+            </a>
+            <a href="index.html" class="logo-dark">
+              <img
+                src="https://aspltech.in/images/logo.png"
+                alt="logo"
+                class="img-fluid"
+                style="max-width: 130px; height: auto"
+              />
+            </a>
+          </div>
+          <div class="d-flex align-items-center gap-4">
+            <div class="btn-group">
+              <button
+                class="btn btn-secondary toggle-menu round-45 p-2 d-flex align-items-center justify-content-center bg-white rounded-circle"
+                style="background-color: #ff8100 !important"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="true"
+                aria-expanded="false"
+              >
+                <iconify-icon
+                  icon="solar:hamburger-menu-line-duotone"
+                  class="menu-icon fs-8"
+                  style="color: #fff !important"
+                ></iconify-icon>
+              </button>
+              <ul class="dropdown-menu dropdown-menu-end p-4">
+                <div class="d-flex flex-column gap-6">
+                  <div
+                    class="hstack justify-content-between border-bottom pb-6"
+                  >
+                    <p class="mb-0 fs-5 text-dark">Menu</p>
+                    <button
+                      type="button"
+                      class="btn-close opacity-75"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="d-flex flex-column gap-3">
+                    <ul
+                      class="header-menu list-unstyled mb-0 d-flex flex-column gap-2"
+                    >
+                      <li class="header-item">
+                        <a
+                          href="index.html"
+                          class="header-link hstack gap-2 fs-7 fw-bold text-dark"
+                          ><img
+                            src="../assets/images/svgs/secondary-leaf.svg"
+                            alt=""
+                            width="20"
+                            height="20"
+                            class="img-fluid animate-spin"
+                          />Home</a
+                        >
+                      </li>
+                      <li class="header-item">
+                        <a
+                          href="about-us.html"
+                          class="header-link hstack gap-2 fs-7 fw-bold text-dark"
+                          ><img
+                            src="../assets/images/svgs/secondary-leaf.svg"
+                            alt=""
+                            width="20"
+                            height="20"
+                            class="img-fluid animate-spin"
+                          />About</a
+                        >
+                      </li>
+                      <li class="header-item">
+                        <a
+                          href="projects.html"
+                          class="header-link hstack gap-2 fs-7 fw-bold text-dark"
+                          ><img
+                            src="../assets/images/svgs/secondary-leaf.svg"
+                            alt=""
+                            width="20"
+                            height="20"
+                            class="img-fluid animate-spin"
+                          />Our Services</a
+                        >
+                      </li>
+                      <li class="header-item">
+                        <a
+                          href="careers.html"
+                          class="header-link hstack gap-2 fs-7 fw-bold text-dark"
+                          ><img
+                            src="../assets/images/svgs/secondary-leaf.svg"
+                            alt=""
+                            width="20"
+                            height="20"
+                            class="img-fluid animate-spin"
+                          />Careers</a
+                        >
+                      </li>
+
+                      <li class="header-item">
+                        <a
+                          href="contact.html"
+                          aria-current="true"
+                          class="header-link active hstack gap-2 fs-7 fw-bold text-dark"
+                          ><img
+                            src="../assets/images/svgs/secondary-leaf.svg"
+                            alt=""
+                            width="20"
+                            height="20"
+                            class="img-fluid animate-spin"
+                          />Contact</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                  <div>
+                    <a class="text-dark" href="tel:+1-212-456-7890"
+                      >+91 9843406360</a
+                    >
+                    <a
+                      class="fs-8 text-dark fw-bold"
+                      href="mailto:info@aspltech.in"
+                      >info@aspltech.in</a
+                    >
+                  </div>
+                </div>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Page Wrapper -->
+    <div class="page-wrapper overflow-hidden pb-5">
+      <!-- Banner Section -->
+      <section
+        class="banner-section banner-inner-section position-relative overflow-hidden d-flex align-items-end"
+      >
+        <video class="bg-video" autoplay muted loop playsinline>
+          <source
+            src="../assets/images/aspLImages/ContactUsBG.mkv"
+            type="video/mp4"
+          />
+        </video>
+        <div class="container position-relative z-1">
+          <div class="d-flex flex-column gap-4 pb-5 pb-xl-10">
+            <div class="row align-items-center">
+              <div class="col-xl-4">
+                <div
+                  class="d-flex align-items-center gap-4"
+                  data-aos="fade-up"
+                  data-aos-delay="100"
+                  data-aos-duration="1000"
+                >
+                  <img
+                    src="../assets/images/svgs/primary-leaf.svg"
+                    alt=""
+                    class="img-fluid animate-spin"
+                  />
+                  <p class="mb-0 text-white fs-5 text-opacity-70">
+                    From coding to
+                    <span style="color: #ff8100">Creativity,</span><br />
+                    business to <span style="color: #ff8100">Technology.</span
+                    ><br />
+                    --find your calling.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="d-flex align-items-end gap-3"
+              data-aos="fade-up"
+              data-aos-delay="200"
+              data-aos-duration="1000"
+            >
+              <h1 class="mb-0 fs-16 text-white lh-1">Contact us</h1>
+              <a
+                href="javascript:void(0)"
+                class="p-1 ps-7 rounded-pill"
+                style="background-color: #0f2440"
+              >
+                <span
+                  class="bg-white round-52 rounded-circle d-flex align-items-center justify-content-center"
+                >
+                  <iconify-icon
+                    icon="lucide:arrow-up-right"
+                    class="fs-8"
+                    style="color: #0f2440"
+                  ></iconify-icon>
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact" class="contact section">
+        <!-- Map -->
+        <div class="m-4 m-md-10" style="border-radius: 20px">
+          <iframe
+            style="
+              width: 100%;
+              height: 400px;
+              border: none;
+              border-radius: 15px;
+            "
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3889.44593513101!2d77.65222397507483!3d12.879022087427918!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae6d73ef4c2353%3A0xec8f6860c60311f4!2sASPL%20TECH%20SOLUTIONS%20PVT%20LTD!5e0!3m2!1sen!2sin!4v1763443402779!5m2!1sen!2sin"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          >
+          </iframe>
+        </div>
+
+        <div class="container">
+          <div class="row gy-5 d-flex align-items-start">
+            <!-- LEFT INFO -->
+            <div class="lfc col-lg-4">
+              <h3 style="color: #0f2440">Get in Touch</h3>
+              <p>We're available for services, training & development.</p>
+
+              <p>
+                <strong>Address:</strong> 1st Floor, 305, Parappana Agrahara
+                Main Rd, AECS Layout - A Block, Sai Sree Layout, Parappana
+                Agrahara, Bengaluru, Karnataka 560100
+              </p>
+              <p><strong>Email:</strong> info@aspltech.in</p>
+              <p><strong>Phone:</strong> +91 9843406360</p>
+            </div>
+
+            <!-- RIGHT FORMS -->
+            <div class="col-lg-8 p-4">
+              <!-- Buttons -->
+              <h2 style="color: #0f2440" class="mb-4">Select an Option</h2>
+              <div class="option-buttons mb-4">
+                <button class="btn-option" onclick="showForm('jobForm')">
+                  Jobs
+                </button>
+                <button class="btn-option" onclick="showForm('courseForm')">
+                  Courses
+                </button>
+                <button class="btn-option" onclick="showForm('serviceForm')">
+                  Services
+                </button>
+              </div>
+
+              <!-- JOB FORM -->
+              <form id="jobForm" class="form-box">
+                <h4 style="color: #0f2440">Job Application Form</h4>
+
+                <input
+                  class="form-control"
+                  name="name"
+                  placeholder="Your Name"
+                  required
+                />
+                <input
+                  class="form-control"
+                  type="email"
+                  name="email"
+                  placeholder="Your Email"
+                  required
+                />
+                <input
+                  class="form-control"
+                  name="phone"
+                  placeholder="Phone Number"
+                  required
+                />
+
+                <select class="form-control" name="position" required>
+                  <option value="">Select Position</option>
+                  <option>Web Developer</option>
+                  <option>Digital Marketing</option>
+                  <option>UI/UX Designer</option>
+                  <option>HR Executive</option>
+                  <option>Telecaller</option>
+                  <option>Receptionist</option>
+                  <option>Business Development Executive</option>
+                  <option>Software Testing</option>
+                  <option>Accountant</option>
+                  <option>Data Entry Operator</option>
+                  <option>Hardware & Networking Engineer</option>
+                </select>
+
+                <textarea
+                  class="form-control"
+                  name="message"
+                  rows="4"
+                  placeholder="Message"
+                  required
+                ></textarea>
+
+                <button class="btn text-center" type="submit">
+                  Submit Job Form
+                </button>
+              </form>
+              <p id="message" class="msg"></p>
+
+              <!-- COURSE FORM -->
+              <form id="courseForm" class="form-box" style="display: none">
+                <h4 style="color: #0f2440">Course Enquiry Form</h4>
+
+                <input
+                  class="form-control"
+                  name="name"
+                  placeholder="Your Name"
+                  required
+                />
+                <input
+                  class="form-control"
+                  type="email"
+                  name="email"
+                  placeholder="Your Email"
+                  required
+                />
+                <input
+                  class="form-control"
+                  name="phone"
+                  placeholder="Phone Number"
+                  required
+                />
+
+                <select class="form-control" name="course" required>
+                  <option value="">Select Course</option>
+                  <option>UI UX Designing</option>
+                  <option>Python Full Stack Developer</option>
+                  <option>Digital Marketing</option>
+                  <option>Testing</option>
+                  <option>Java Full-stack Developer</option>
+                  <option>Ai Vibe Coding</option>
+                  <option>Web Development</option>
+                  <option>Hardware and Networking</option>
+                  <option>Graphic Designer</option>
+                  <option>Data Analytics</option>
+                  <option>Canva</option>
+                  <option>Diploma & Computer Application</option>
+                  <option>AutoCADD</option>
+                  <option>Tally</option>
+                  <option>Power BI</option>
+                  <option>Advanced Excel</option>
+                  <option>Spoken English & Soft Skills</option>
+                </select>
+
+                <textarea
+                  class="form-control"
+                  name="message"
+                  rows="4"
+                  placeholder="Message"
+                  required
+                ></textarea>
+
+                <button class="btn center-btn" type="submit">
+                  Submit Course Form
+                </button>
+              </form>
+              <p id="message" class="msg"></p>
+
+              <!-- SERVICE FORM -->
+              <form id="serviceForm" class="form-box" style="display: none">
+                <h4 style="color: #0f2440">Service Request Form</h4>
+
+                <input
+                  class="form-control"
+                  name="name"
+                  placeholder="Your Name"
+                  required
+                />
+                <input
+                  class="form-control"
+                  type="email"
+                  name="email"
+                  placeholder="Your Email"
+                  required
+                />
+                <input
+                  class="form-control"
+                  name="phone"
+                  placeholder="Phone Number"
+                  required
+                />
+
+                <select class="form-control" name="service" required>
+                  <option value="">Select Service</option>
+                  <option>Man Power Placement</option>
+                  <option>Event Management</option>
+                  <option>Printing Solution</option>
+                  <option>Training</option>
+                  <option>Skill Development</option>
+                  <option>Laptop Sales, Servicing & Rental</option>
+                  <option>Podcasting & Video Editing</option>
+                </select>
+
+                <textarea
+                  class="form-control"
+                  name="message"
+                  rows="4"
+                  placeholder="Message"
+                  required
+                ></textarea>
+
+                <button class="btn center-btn" type="submit">
+                  Submit Service Form
+                </button>
+              </form>
+              <p id="message" class="msg"></p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Footer -->
+
+    <footer class="footer pt-5 pb-3" style="background-color: #0f2440">
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-5 mb-8 mb-xl-0">
+            <div class="d-flex flex-column gap-8 pe-xl-5">
+              <h2 class="mb-0 text-white">Build something together?</h2>
+              <div class="d-flex flex-column gap-2">
+                <style>
+                  .footer-hover:hover {
+                    color: #ff8100 !important;
+                  }
+                  .footer-hover:hover iconify-icon {
+                    color: #ff8100 !important;
+                  }
+                </style>
+
+                <a
+                  href="https://aspltech.in/"
+                  target="_blank"
+                  class="link-hover hstack gap-3 text-white fs-5 footer-hover"
+                >
+                  <iconify-icon
+                    icon="lucide:arrow-up-right"
+                    class="fs-7 text-white"
+                  ></iconify-icon>
+                  info@aspltech.in
+                </a>
+
+                <a
+                  href="http://bit.ly/480pS6P"
+                  target="_blank"
+                  class="link-hover hstack gap-3 text-white fs-5 footer-hover"
+                >
+                  <iconify-icon
+                    icon="lucide:map-pin"
+                    class="fs-7 text-white"
+                  ></iconify-icon>
+                  ASPL
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-xl-2 mb-8 mb-xl-0">
+            <style>
+              .footer-menu a:hover {
+                color: #ff8100 !important;
+              }
+            </style>
+
+            <ul class="footer-menu list-unstyled mb-0 d-flex flex-column gap-2">
+              <li>
+                <a class="link-hover fs-5 text-white" href="index.html">Home</a>
+              </li>
+              <li>
+                <a class="link-hover fs-5 text-white" href="about-us.html"
+                  >About</a
+                >
+              </li>
+              <li>
+                <a
+                  class="link-hover fs-5 text-white"
+                  id="services"
+                  href="#services"
+                  >Services</a
+                >
+              </li>
+              <li>
+                <a class="link-hover fs-5 text-white" href="careers.html"
+                  >Careers</a
+                >
+              </li>
+              <li>
+                <a class="link-hover fs-5 text-white" href="contact.html"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-4 col-xl-2 mb-8 mb-xl-0">
+            <style>
+              .social-link:hover {
+                color: #ff8100 !important;
+              }
+              .social-link:hover iconify-icon {
+                color: #ff8100 !important;
+              }
+            </style>
+
+            <ul class="footer-menu list-unstyled mb-0 d-flex flex-column gap-2">
+              <a
+                class="link-hover fs-5 text-white d-flex align-items-center gap-2 social-link"
+                href="https://www.linkedin.com/company/aspl-tech-solutions/"
+                target="_blank"
+              >
+                <iconify-icon
+                  icon="mdi:linkedin"
+                  class="fs-5 text-white"
+                ></iconify-icon>
+                LinkedIn
+              </a>
+              <a
+                class="link-hover fs-5 text-white d-flex align-items-center gap-2 social-link"
+                href="https://www.instagram.com/aspltechsolutions?igsh=bnRvNWVwenJ0cHIx&utm_source=qr"
+                target="_blank"
+              >
+                <iconify-icon
+                  icon="mdi:instagram"
+                  class="fs-5 text-white"
+                ></iconify-icon>
+                Instagram
+              </a>
+              <a
+                class="link-hover fs-5 text-white d-flex align-items-center gap-2 social-link"
+                href="https://www.facebook.com/share/1FqnA1k37Y/"
+                target="_blank"
+              >
+                <iconify-icon
+                  icon="mdi:facebook"
+                  class="fs-5 text-white"
+                ></iconify-icon>
+                Facebook
+              </a>
+              <a
+                class="link-hover fs-5 text-white d-flex align-items-center gap-2 social-link"
+                href="https://www.threads.com/@aspltechsolutions"
+                target="_blank"
+              >
+                <iconify-icon
+                  icon="simple-icons:threads"
+                  class="fs-5 text-white"
+                ></iconify-icon>
+                Threads
+              </a>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <hr class="border-white mt-0 mt-md-5" />
+      <p class="text-white text-opacity-70 text-md-center mt-4 text-center">
+        © 2025
+        <a class="text-white" href="https://aspltech.in/" target="_blank"
+          >ASPL</a
+        >
+        Tech Solutions Private Limited. All rights reserved. | Crafted with
+        passion in Bangalore.
+      </p>
+    </footer>
+
+    <div class="floating-buttons">
+      <a
+        href="https://wa.me/919843406360"
+        class="whatsapp-float pulse"
+        target="_blank"
+      >
+        <img
+          src="https://img.icons8.com/color/48/whatsapp.png"
+          alt="WhatsApp"
+        />
+      </a>
+
+      <button
+        class="btn p-2 rounded-circle scroll-btn"
+        id="scrollToTopBtn"
+        style="background-color: #ff8100"
+      >
+        <iconify-icon icon="lucide:arrow-up" class="fs-7" style="color: #fff">
+        </iconify-icon>
+      </button>
+    </div>
+
+    <!-- JS Libraries -->
+    <script src="../assets/libs/jquery/dist/jquery.min.js"></script>
+    <script src="../assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/libs/owl.carousel/dist/owl.carousel.min.js"></script>
+    <script src="../assets/libs/aos-master/dist/aos.js"></script>
+    <script src="../assets/js/custom.js"></script>
+
+    <!-- Icons -->
+    <script src="https://cdn.jsdelivr.net/npm/iconify-icon/dist/iconify-icon.min.js"></script>
+
+    <!-- SHOW FORM SCRIPT -->
+    <script>
+      function showForm(formId) {
+        document
+          .querySelectorAll(".form-box")
+          .forEach((f) => (f.style.display = "none"));
+        document.getElementById(formId).style.display = "block";
+      }
+    </script>
+
+    <script>
+      async function handleFormSubmit(formId, messageId, endpoint) {
+        const form = document.getElementById(formId);
+        const messageBox = document.getElementById(messageId);
+
+        form.addEventListener("submit", async function (e) {
+          e.preventDefault();
+
+          const formData = new FormData(form);
+
+          const response = await fetch(endpoint, {
+            method: "POST",
+            body: formData,
+            headers: { Accept: "application/json" },
+          });
+
+          if (response.ok) {
+            messageBox.style.color = "green";
+            messageBox.innerText = "🎉 Form submitted successfully!";
+          } else {
+            messageBox.style.color = "red";
+            messageBox.innerText = "❌ Something went wrong. Please try again!";
+          }
+
+          messageBox.style.display = "block";
+          setTimeout(() => {
+            messageBox.style.display = "none";
+          }, 5000);
+
+          form.reset();
+        });
+      }
+
+      /* ⭐⭐⭐ INSERT YOUR FORMSPREE IDs HERE ⭐⭐⭐ */
+
+      handleFormSubmit("jobForm", "message", "https://formspree.io/f/xdkbwqlv");
+
+      handleFormSubmit(
+        "courseForm",
+        "message",
+        "https://formspree.io/f/manvpzdl"
+      );
+
+      handleFormSubmit(
+        "serviceForm",
+        "message",
+        "https://formspree.io/f/xkgyqlkk"
+      );
+    </script>
+  </body>
+</html>

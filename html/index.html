@@ -1,0 +1,1802 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ASPL Tech Solutions Pvt Ltd</title>
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="./assets/images/logos/LOGO_ASPL.png"
+    />
+    <link
+      rel="stylesheet"
+      href="../assets/libs/owl.carousel/dist/assets/owl.carousel.min.css"
+    />
+    <link rel="stylesheet" href="../assets/libs/aos-master/dist/aos.css" />
+    <link rel="stylesheet" href="../assets/css/styles.css" />
+  </head>
+
+  <style>
+    /* Parent container - fixed to right side */
+    .floating-buttons {
+      position: fixed;
+      bottom: 10%;
+      right: 5%;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      z-index: 9999;
+    }
+
+    /* WhatsApp Button */
+    .whatsapp-float {
+      width: 60px;
+      height: 60px;
+      background-color: #25d366;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+      cursor: pointer;
+    }
+
+    /* WhatsApp Icon */
+    .whatsapp-float img {
+      width: 35px;
+      height: 35px;
+    }
+
+    /* Scroll-to-top button */
+    .scroll-btn {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Pulse Animation */
+    .pulse {
+      animation: pulseAnimation 1.5s ease-out infinite;
+    }
+
+    @keyframes pulseAnimation {
+      0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+      }
+      70% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 18px rgba(37, 211, 102, 0);
+      }
+      100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+      }
+    }
+
+    .bg-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+      opacity: 1; /* adjust if needed */
+    }
+  </style>
+
+  <body>
+    <!-- Header -->
+
+    <header class="header position-fixed start-0 top-0 w-100">
+      <div class="container">
+        <div
+          class="header-wrapper d-flex align-items-center justify-content-between"
+        >
+          <div class="logo">
+            <a href="index.html" class="logo-white">
+              <img
+                src="https://aspltech.in/images/logo.png"
+                alt="logo"
+                class="img-fluid"
+                style="max-width: 130px; height: auto"
+              />
+            </a>
+            <a href="index.html" class="logo-dark">
+              <img
+                src="https://aspltech.in/images/logo.png"
+                alt="logo"
+                class="img-fluid"
+                style="max-width: 130px; height: auto"
+              />
+            </a>
+          </div>
+          <div class="d-flex align-items-center gap-4">
+            <div class="btn-group">
+              <button
+                class="btn btn-secondary toggle-menu round-45 p-2 d-flex align-items-center justify-content-center bg-white rounded-circle"
+                style="background-color: #ff8100 !important"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="true"
+                aria-expanded="false"
+              >
+                <iconify-icon
+                  icon="solar:hamburger-menu-line-duotone"
+                  class="menu-icon fs-8"
+                  style="color: #fff !important"
+                ></iconify-icon>
+              </button>
+              <ul class="dropdown-menu dropdown-menu-end p-4">
+                <div class="d-flex flex-column gap-6">
+                  <div
+                    class="hstack justify-content-between border-bottom pb-6"
+                  >
+                    <p class="mb-0 fs-5 text-dark">Menu</p>
+                    <button
+                      type="button"
+                      class="btn-close opacity-75"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="d-flex flex-column gap-3">
+                    <ul
+                      class="header-menu list-unstyled mb-0 d-flex flex-column gap-2"
+                    >
+                      <li class="header-item">
+                        <a
+                          href="index.html"
+                          aria-current="true"
+                          class="header-link active hstack gap-2 fs-7 fw-bold text-dark"
+                          ><img
+                            src="../assets/images/svgs/secondary-leaf.svg"
+                            alt=""
+                            width="20"
+                            height="20"
+                            class="img-fluid animate-spin"
+                          />Home</a
+                        >
+                      </li>
+                      <li class="header-item">
+                        <a
+                          href="about-us.html"
+                          class="header-link hstack gap-2 fs-7 fw-bold text-dark"
+                          ><img
+                            src="../assets/images/svgs/secondary-leaf.svg"
+                            alt=""
+                            width="20"
+                            height="20"
+                            class="img-fluid animate-spin"
+                          />About</a
+                        >
+                      </li>
+                      <li class="header-item">
+                        <a
+                          href="projects.html"
+                          class="header-link hstack gap-2 fs-7 fw-bold text-dark"
+                          ><img
+                            src="../assets/images/svgs/secondary-leaf.svg"
+                            alt=""
+                            width="20"
+                            height="20"
+                            class="img-fluid animate-spin"
+                          />Our Services</a
+                        >
+                      </li>
+                      <li class="header-item">
+                        <a
+                          href="careers.html"
+                          class="header-link hstack gap-2 fs-7 fw-bold text-dark"
+                          ><img
+                            src="../assets/images/svgs/secondary-leaf.svg"
+                            alt=""
+                            width="20"
+                            height="20"
+                            class="img-fluid animate-spin"
+                          />Careers</a
+                        >
+                      </li>
+
+                      <li class="header-item">
+                        <a
+                          href="contact.html"
+                          class="header-link hstack gap-2 fs-7 fw-bold text-dark"
+                          ><img
+                            src="../assets/images/svgs/secondary-leaf.svg"
+                            alt=""
+                            width="20"
+                            height="20"
+                            class="img-fluid animate-spin"
+                          />Contact</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                  <div>
+                    <a class="text-dark" href="tel:+1-212-456-7890"
+                      >+91 9843406360</a
+                    >
+                    <a
+                      class="fs-8 text-dark fw-bold"
+                      href="mailto:info@aspltech.in"
+                      >info@aspltech.in</a
+                    >
+                  </div>
+                </div>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!--  Page Wrapper -->
+    <div class="page-wrapper overflow-hidden">
+      <!--  Banner Section -->
+      <section
+        class="banner-section position-relative d-flex align-items-end min-vh-100"
+      >
+        <video
+          class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover"
+          autoplay
+          muted
+          loop
+          playsinline
+        >
+          <source
+            src="../assets/images/backgrounds/banner-video.mp4"
+            type="video/mp4"
+          />
+        </video>
+        <div class="container">
+          <div class="d-flex flex-column gap-4 pb-8 position-relative z-1">
+            <div class="row align-items-center">
+              <div class="col-xl-4">
+                <div
+                  class="d-flex align-items-center gap-4"
+                  data-aos="fade-up"
+                  data-aos-delay="100"
+                  data-aos-duration="1000"
+                >
+                  <img
+                    src="../assets/images/svgs/primary-leaf.svg"
+                    alt=""
+                    class="img-fluid animate-spin"
+                  />
+                  <p class="mb-0 text-white fs-5 text-opacity-70">
+                    We’re here to help
+                    <span style="color: #ff8100">
+                      businesses with end-to-end services</span
+                    >, and individuals who want to upskill and grow through
+                    practical, real-world learning.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="d-flex align-items-end gap-3"
+              data-aos="fade-up"
+              data-aos-delay="200"
+              data-aos-duration="1000"
+            >
+              <h1 class="mb-0 fs-16 text-white lh-1">ASPL</h1>
+              <a
+                href="javascript:void(0)"
+                class="p-1 ps-7 rounded-pill"
+                style="background-color: #0f2440"
+              >
+                <span
+                  class="bg-white round-52 rounded-circle d-flex align-items-center justify-content-center"
+                >
+                  <iconify-icon
+                    icon="lucide:arrow-up-right"
+                    class="fs-8"
+                    style="color: #0f2440"
+                  ></iconify-icon>
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--  Stats & Facts Section -->
+      <section
+        class="stats-facts py-5 py-lg-11 py-xl-12 position-relative overflow-hidden"
+      >
+        <div class="container">
+          <div class="row gap-7 gap-xl-0">
+            <div class="col-xl-4 col-xxl-4">
+              <div
+                class="d-flex align-items-center gap-7 py-2"
+                data-aos="fade-right"
+                data-aos-delay="100"
+                data-aos-duration="1000"
+              >
+                <span
+                  class="round-36 flex-shrink-0 rounded-circle hstack justify-content-center fw-medium"
+                  style="
+                    background-color: #ff8100 !important;
+                    color: #fff !important;
+                  "
+                  >01</span
+                >
+                <hr class="border-line" />
+                <span class="badge" style="background-color: #0fa092"
+                  >What Makes ASPL Stand Out?</span
+                >
+              </div>
+            </div>
+            <div class="col-xl-8 col-xxl-7">
+              <div class="d-flex flex-column gap-9">
+                <div class="row">
+                  <div class="col-xxl-8">
+                    <div
+                      class="d-flex flex-column gap-6"
+                      data-aos="fade-up"
+                      data-aos-delay="100"
+                      data-aos-duration="1000"
+                    >
+                      <h2 class="mb-0" style="color: #0f2440">
+                        We listen, understand, help, and support throughout!
+                      </h2>
+                      <p class="fs-5 mb-0">
+                        ASPL brings together a team of skilled experts across
+                        multiple domains,delivering high-quality work, reliable
+                        support, and results that make us the trusted choice for
+                        businesses and individuals alike.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6 col-lg-4 mb-7 mb-lg-0">
+                    <div
+                      class="d-flex flex-column gap-6 pt-9 border-top"
+                      data-aos="fade-up"
+                      data-aos-delay="200"
+                      data-aos-duration="1000"
+                    >
+                      <h2 class="mb-0 fs-14">
+                        <span
+                          class="count"
+                          data-target="40"
+                          style="color: #0f2440"
+                          >500</span
+                        ><span style="color: #ff8100">+</span>
+                      </h2>
+                      <p class="mb-0">Projects Delivered</p>
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-lg-4 mb-7 mb-lg-0">
+                    <div
+                      class="d-flex flex-column gap-6 pt-9 border-top"
+                      data-aos="fade-up"
+                      data-aos-delay="300"
+                      data-aos-duration="1000"
+                    >
+                      <h2 class="mb-0 fs-14">
+                        <span
+                          class="count"
+                          data-target="238"
+                          style="color: #0f2440"
+                          >15</span
+                        ><span style="color: #ff8100">+</span>
+                      </h2>
+                      <p class="mb-0">Industry Covered</p>
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-lg-4 mb-7 mb-lg-0">
+                    <div
+                      class="d-flex flex-column gap-6 pt-9 border-top"
+                      data-aos="fade-up"
+                      data-aos-delay="400"
+                      data-aos-duration="1000"
+                    >
+                      <h2 class="mb-0 fs-14">
+                        <span
+                          class="count"
+                          data-target="3"
+                          style="color: #0f2440"
+                          >98</span
+                        ><span style="color: #ff8100">+</span>
+                      </h2>
+                      <p class="mb-0">Satisfied Clients</p>
+                    </div>
+                  </div>
+                </div>
+                <a
+                  href="about-us.html"
+                  class="btn"
+                  data-aos="fade-up"
+                  data-aos-delay="500"
+                  data-aos-duration="1000"
+                >
+                  <span class="btn-text">Who we are</span>
+                  <iconify-icon
+                    icon="lucide:arrow-up-right"
+                    class="btn-icon bg-white text-dark round-52 rounded-circle hstack justify-content-center fs-7 shadow-sm"
+                  ></iconify-icon>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="position-absolute bottom-0 start-0"
+          data-aos="zoom-in"
+          data-aos-delay="100"
+          data-aos-duration="1000"
+        >
+          <img
+            src="../assets/images/backgrounds/stats-facts-bg.svg"
+            alt=""
+            class="img-fluid"
+          />
+        </div>
+      </section>
+
+      <!--  Featured Projects Section -->
+      <section class="featured-projects py-5 py-lg-11 py-xl-12 bg-light-gray">
+        <div class="d-flex flex-column gap-5 gap-xl-11">
+          <div class="container">
+            <div class="row gap-7 gap-xl-0">
+              <div class="col-xl-4 col-xxl-4">
+                <div
+                  class="d-flex align-items-center gap-7 py-2"
+                  data-aos="fade-right"
+                  data-aos-delay="100"
+                  data-aos-duration="1000"
+                >
+                  <span
+                    class="round-36 flex-shrink-0 text-dark rounded-circle bg-primary hstack justify-content-center fw-medium"
+                    style="
+                      background-color: #ff8100 !important;
+                      color: #fff !important;
+                    "
+                    >02</span
+                  >
+                  <hr class="border-line" />
+                  <span class="badge" style="background-color: #0fa092"
+                    >Portfolio</span
+                  >
+                </div>
+              </div>
+              <div class="col-xl-8 col-xxl-7">
+                <div class="row">
+                  <div class="col-xxl-8">
+                    <div
+                      class="d-flex flex-column gap-6"
+                      data-aos="fade-up"
+                      data-aos-delay="100"
+                      data-aos-duration="1000"
+                    >
+                      <h2 class="mb-0" style="color: #0f2440">
+                        Featured projects
+                      </h2>
+                      <p class="fs-5 mb-0">
+                        A glimpse into our creativity—exploring innovative
+                        designs, successful collaborations, and transformative
+                        digital experiences.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="featured-projects-slider px-3">
+            <div class="owl-carousel owl-theme">
+              <div class="item">
+                <div class="portfolio d-flex flex-column gap-6">
+                  <div class="portfolio-img position-relative overflow-hidden">
+                    <img
+                      src="../assets/images/portfolio/portfolio-img-1.jpg"
+                      alt=""
+                      class="img-fluid"
+                    />
+                    <div class="portfolio-overlay">
+                      <a
+                        href="projects-detail.html"
+                        class="position-absolute top-50 start-50 translate-middle bg-primary round-64 rounded-circle hstack justify-content-center"
+                      >
+                        <iconify-icon
+                          icon="lucide:arrow-up-right"
+                          class="fs-8 text-dark"
+                        ></iconify-icon>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="portfolio-details d-flex flex-column gap-3">
+                    <h3 class="mb-0">Snapclear</h3>
+                    <div class="hstack gap-2">
+                      <span class="badge text-dark border">UX Strategy</span>
+                      <span class="badge text-dark border">UI Design</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="portfolio d-flex flex-column gap-6">
+                  <div class="portfolio-img position-relative overflow-hidden">
+                    <img
+                      src="../assets/images/portfolio/portfolio-img-2.jpg"
+                      alt=""
+                      class="img-fluid"
+                    />
+                    <div class="portfolio-overlay">
+                      <a
+                        href="projects-detail.html"
+                        class="position-absolute top-50 start-50 translate-middle bg-primary round-64 rounded-circle hstack justify-content-center"
+                      >
+                        <iconify-icon
+                          icon="lucide:arrow-up-right"
+                          class="fs-8 text-dark"
+                        ></iconify-icon>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="portfolio-details d-flex flex-column gap-3">
+                    <h3 class="mb-0">Amber Bottle</h3>
+                    <div class="hstack gap-2">
+                      <span class="badge text-dark border"
+                        >Web development</span
+                      >
+                      <span class="badge text-dark border">Digital design</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="portfolio d-flex flex-column gap-6">
+                  <div class="portfolio-img position-relative overflow-hidden">
+                    <img
+                      src="../assets/images/portfolio/portfolio-img-3.jpg"
+                      alt=""
+                      class="img-fluid"
+                    />
+                    <div class="portfolio-overlay">
+                      <a
+                        href="projects-detail.html"
+                        class="position-absolute top-50 start-50 translate-middle bg-primary round-64 rounded-circle hstack justify-content-center"
+                      >
+                        <iconify-icon
+                          icon="lucide:arrow-up-right"
+                          class="fs-8 text-dark"
+                        ></iconify-icon>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="portfolio-details d-flex flex-column gap-3">
+                    <h3 class="mb-0">Pixelforge</h3>
+                    <div class="hstack gap-2">
+                      <span class="badge text-dark border">UI/UX design</span>
+                      <span class="badge text-dark border"
+                        >Web development</span
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="portfolio d-flex flex-column gap-6">
+                  <div class="portfolio-img position-relative overflow-hidden">
+                    <img
+                      src="../assets/images/portfolio/portfolio-img-4.jpg"
+                      alt=""
+                      class="img-fluid"
+                    />
+                    <div class="portfolio-overlay">
+                      <a
+                        href="projects-detail.html"
+                        class="position-absolute top-50 start-50 translate-middle bg-primary round-64 rounded-circle hstack justify-content-center"
+                      >
+                        <iconify-icon
+                          icon="lucide:arrow-up-right"
+                          class="fs-8 text-dark"
+                        ></iconify-icon>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="portfolio-details d-flex flex-column gap-3">
+                    <h3 class="mb-0">BioTrack LIMS</h3>
+                    <div class="hstack gap-2">
+                      <span class="badge text-dark border">Brand identity</span>
+                      <span class="badge text-dark border">Digital design</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="portfolio d-flex flex-column gap-6">
+                  <div class="portfolio-img position-relative overflow-hidden">
+                    <img
+                      src="../assets/images/portfolio/portfolio-img-5.jpg"
+                      alt=""
+                      class="img-fluid"
+                    />
+                    <div class="portfolio-overlay">
+                      <a
+                        href="projects-detail.html"
+                        class="position-absolute top-50 start-50 translate-middle bg-primary round-64 rounded-circle hstack justify-content-center"
+                      >
+                        <iconify-icon
+                          icon="lucide:arrow-up-right"
+                          class="fs-8 text-dark"
+                        ></iconify-icon>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="portfolio-details d-flex flex-column gap-3">
+                    <h3 class="mb-0">Amber Bottle</h3>
+                    <div class="hstack gap-2">
+                      <span class="badge text-dark border">Photography</span>
+                      <span class="badge text-dark border">Studio</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="portfolio d-flex flex-column gap-6">
+                  <div class="portfolio-img position-relative overflow-hidden">
+                    <img
+                      src="../assets/images/portfolio/portfolio-img-6.jpg"
+                      alt=""
+                      class="img-fluid"
+                    />
+                    <div class="portfolio-overlay">
+                      <a
+                        href="projects-detail.html"
+                        class="position-absolute top-50 start-50 translate-middle bg-primary round-64 rounded-circle hstack justify-content-center"
+                      >
+                        <iconify-icon
+                          icon="lucide:arrow-up-right"
+                          class="fs-8 text-dark"
+                        ></iconify-icon>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="portfolio-details d-flex flex-column gap-3">
+                    <h3 class="mb-0">Digital Magazine</h3>
+                    <div class="hstack gap-2">
+                      <span class="badge text-dark border">Digital design</span>
+                      <span class="badge text-dark border"
+                        >Web development</span
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--  Why choose us Section -->
+      <section class="why-choose-us py-5 py-lg-11 py-xl-12">
+        <div class="container">
+          <div class="row justify-content-between gap-5 gap-xl-0">
+            <div class="col-xl-3 col-xxl-3">
+              <div class="d-flex flex-column gap-7">
+                <div
+                  class="d-flex align-items-center gap-7 py-2"
+                  data-aos="fade-right"
+                  data-aos-delay="100"
+                  data-aos-duration="1000"
+                >
+                  <span
+                    class="round-36 flex-shrink-0 text-dark rounded-circle bg-primary hstack justify-content-center fw-medium"
+                    style="
+                      background-color: #ff8100 !important;
+                      color: #fff !important;
+                    "
+                    >03</span
+                  >
+                  <hr class="border-line" />
+                  <span class="badge" style="background-color: #0fa092"
+                    >About us</span
+                  >
+                </div>
+                <h2
+                  class="mb-0"
+                  data-aos="fade-right"
+                  data-aos-delay="200"
+                  data-aos-duration="1000"
+                >
+                  Why choose us
+                </h2>
+                <p
+                  class="mb-0 fs-5"
+                  data-aos="fade-right"
+                  data-aos-delay="300"
+                  data-aos-duration="1000"
+                >
+                  We never say no – whether you’re a business or a student.<br />
+                  Real work > long theory classes.<br />
+                  Everything under one roof: creative, tech, marketing, events,
+                  hiring.
+                </p>
+              </div>
+            </div>
+            <div class="col-xl-9 col-xxl-8">
+              <div class="row">
+                <div class="col-lg-4 mb-7 mb-lg-0">
+                  <div
+                    class="card position-relative overflow-hidden h-100"
+                    data-aos="fade-up"
+                    data-aos-delay="100"
+                    data-aos-duration="1000"
+                    style="background-color: #0f2440"
+                  >
+                    <div
+                      class="card-body d-flex flex-column justify-content-between"
+                    >
+                      <div
+                        class="d-flex flex-column gap-3 position-relative z-1"
+                      >
+                        <ul class="list-unstyled mb-0 hstack gap-1">
+                          <li>
+                            <a class="hstack" href="javascript:void(0)"
+                              ><iconify-icon
+                                icon="solar:star-bold"
+                                class="fs-6"
+                                style="color: gold"
+                              ></iconify-icon
+                            ></a>
+                          </li>
+                          <li>
+                            <a class="hstack" href="javascript:void(0)"
+                              ><iconify-icon
+                                icon="solar:star-bold"
+                                class="fs-6"
+                                style="color: gold"
+                              ></iconify-icon
+                            ></a>
+                          </li>
+                          <li>
+                            <a class="hstack" href="javascript:void(0)"
+                              ><iconify-icon
+                                icon="solar:star-bold"
+                                class="fs-6"
+                                style="color: gold"
+                              ></iconify-icon
+                            ></a>
+                          </li>
+                          <li>
+                            <a class="hstack" href="javascript:void(0)"
+                              ><iconify-icon
+                                icon="solar:star-bold"
+                                class="fs-6"
+                                style="color: gold"
+                              ></iconify-icon
+                            ></a>
+                          </li>
+                          <li>
+                            <a class="hstack" href="javascript:void(0)"
+                              ><iconify-icon
+                                icon="solar:star-line-duotone"
+                                class="fs-6"
+                                style="color: gold"
+                              ></iconify-icon
+                            ></a>
+                          </li>
+                        </ul>
+                        <p class="mb-0 fs-6 text-white">
+                          We listen, understand, help, and support throughout!
+                        </p>
+                      </div>
+                      <div class="position-relative z-1">
+                        <div class="pb-6 border-bottom">
+                          <h2 class="mb-0" style="color: #ff8100">98+</h2>
+                          <p class="mb-0 text-white">Customer satisfaction</p>
+                        </div>
+                        <div class="hstack gap-6 pt-6">
+                          <img
+                            src="../assets/images/profile/avatar-1.png"
+                            alt=""
+                            class="img-fluid rounded-circle overflow-hidden flex-shrink-0"
+                            width="64"
+                            height="64"
+                          />
+                          <div>
+                            <h5 class="mb-0 text-white">Wade Warren</h5>
+                            <p class="mb-0" style="color: gray">
+                              Bank of America
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 mb-7 mb-lg-0">
+                  <div
+                    class="d-flex flex-column gap-7"
+                    data-aos="fade-up"
+                    data-aos-delay="200"
+                    data-aos-duration="1000"
+                  >
+                    <div class="position-relative">
+                      <img
+                        src="../assets/images/services/services-img-2.jpg"
+                        alt=""
+                        class="img-fluid w-100"
+                      />
+                    </div>
+
+                    <div class="card" style="background-color: #0f2440">
+                      <div class="card-body d-flex flex-column gap-7">
+                        <div>
+                          <h2 class="mb-0 text-white">500+</h2>
+                          <p class="mb-0 text-white text-opacity-70">
+                            Successful projects completed
+                          </p>
+                        </div>
+                        <ul class="d-flex align-items-center mb-0">
+                          <li>
+                            <a href="javascript:void(0)">
+                              <img
+                                src="../assets/images/profile/user-1.jpg"
+                                width="44"
+                                height="44"
+                                class="rounded-circle border border-2 border-dark"
+                                alt="user-1"
+                              />
+                            </a>
+                          </li>
+                          <li class="ms-n2">
+                            <a href="javascript:void(0)">
+                              <img
+                                src="../assets/images/profile/user-2.jpg"
+                                width="44"
+                                height="44"
+                                class="rounded-circle border border-2 border-dark"
+                                alt="user-2"
+                              />
+                            </a>
+                          </li>
+                          <li class="ms-n2">
+                            <a href="javascript:void(0)">
+                              <img
+                                src="../assets/images/profile/user-3.jpg"
+                                width="44"
+                                height="44"
+                                class="rounded-circle border border-2 border-dark"
+                                alt="user-3"
+                              />
+                            </a>
+                          </li>
+                          <li class="ms-n2">
+                            <a href="javascript:void(0)">
+                              <img
+                                src="../assets/images/profile/user-4.jpg"
+                                width="44"
+                                height="44"
+                                class="rounded-circle border border-2 border-dark"
+                                alt="user-4"
+                              />
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-lg-4 mb-7 mb-lg-0">
+                  <div
+                    class="card h-100 position-relative overflow-hidden"
+                    data-aos="fade-up"
+                    data-aos-delay="300"
+                    data-aos-duration="1000"
+                  >
+                    <span
+                      class="border rounded-circle round-490 d-block position-absolute top-0 start-50 translate-middle"
+                    ></span>
+                    <div
+                      class="card-body d-flex flex-column justify-content-between"
+                    >
+                      <div>
+                        <h2 class="mb-0" style="color: #0f2440">238+</h2>
+                        <p class="mb-0" style="color: #0f2440">
+                          Brands served worldwide
+                        </p>
+                      </div>
+                      <div class="d-flex flex-column gap-3">
+                        <a href="index.html" class="">
+                          <img
+                            src="https://aspltech.in/images/logo.png"
+                            alt="logo"
+                            class="img-fluid"
+                          />
+                        </a>
+                        <p class="mb-0 fs-5 text-dark opacity-75">
+                          Our global reach allows us to create unique,
+                          culturally relevant designs for businesses across
+                          different industries.
+                        </p>
+                      </div>
+                    </div>
+                    <span
+                      class="border rounded-circle round-490 d-block position-absolute top-100 start-50 translate-middle"
+                    ></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--  Testimonial Section -->
+      <section class="testimonial py-5 py-lg-11 py-xl-12 bg-light-gray">
+        <div class="container">
+          <div class="d-flex flex-column gap-5 gap-xl-11">
+            <div class="row gap-7 gap-xl-0">
+              <div class="col-xl-4 col-xxl-4">
+                <div
+                  class="d-flex align-items-center gap-7 py-2"
+                  data-aos="fade-right"
+                  data-aos-delay="100"
+                  data-aos-duration="1000"
+                >
+                  <span
+                    class="round-36 flex-shrink-0 text-dark rounded-circle bg-primary hstack justify-content-center fw-medium"
+                    style="
+                      background-color: #ff8100 !important;
+                      color: #fff !important;
+                    "
+                    >04</span
+                  >
+                  <hr class="border-line bg-white" />
+                  <span class="badge" style="background-color: #0fa092"
+                    >Testimonial</span
+                  >
+                </div>
+              </div>
+              <div class="col-xl-8 col-xxl-7">
+                <div class="row">
+                  <div class="col-xxl-8">
+                    <div
+                      class="d-flex flex-column gap-6"
+                      data-aos="fade-up"
+                      data-aos-delay="100"
+                      data-aos-duration="1000"
+                    >
+                      <h2 class="mb-0" style="color: #0f2440">
+                        Stories from clients
+                      </h2>
+                      <p class="fs-5 mb-0 text-opacity-70">
+                        Real experiences, genuine feedback—discover how our
+                        creative solutions have transformed brands and elevated
+                        businesses.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row gap-7 gap-lg-0">
+              <div class="col-lg-4 col-xl-3 d-flex align-items-stretch">
+                <div
+                  class="card w-100"
+                  data-aos="fade-up"
+                  data-aos-delay="100"
+                  data-aos-duration="1000"
+                  style="background-color: #0f2440"
+                >
+                  <div
+                    class="card-body d-flex flex-column gap-5 gap-xl-11 justify-content-between"
+                  >
+                    <div class="d-flex flex-column gap-4">
+                      <p class="mb-0" style="color: gray">Hear from them</p>
+                      <h4 class="mb-0" style="color: #fff">
+                        ASPL handled my branding, design, and launch smoothly.
+                        Within a few months, I had my first customers.
+                      </h4>
+                    </div>
+                    <div class="hstack gap-3">
+                      <img
+                        src="../assets/images/testimonial/testimonial-1.jpg"
+                        alt=""
+                        class="img-fluid rounded-circle overflow-hidden flex-shrink-0"
+                        width="60"
+                        height="60"
+                      />
+                      <div>
+                        <h5 class="mb-1 fw-normal text-white">Our Client</h5>
+                        <p class="mb-0 text-white opacity-75">
+                          Chennai, Tamil Nadu
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-xl-6 d-flex align-items-stretch">
+                <div
+                  class="card bg-dark w-100"
+                  data-aos="fade-up"
+                  data-aos-delay="200"
+                  data-aos-duration="1000"
+                >
+                  <div
+                    class="card-body d-flex flex-column gap-5 gap-xl-11 justify-content-between"
+                  >
+                    <div class="d-flex flex-column gap-4">
+                      <p class="mb-0 text-white text-opacity-70">
+                        Hear from them
+                      </p>
+                      <h4 class="mb-0 text-white pe-xl-2">
+                        I was looking for the best digital marketing support.
+                        ASPL gave me real projects to work on, and in eight
+                        weeks, I built a portfolio that got me interview calls.
+                      </h4>
+                      <div class="hstack gap-2">
+                        <ul class="list-unstyled mb-0 hstack gap-1">
+                          <li>
+                            <a class="hstack" href="javascript:void(0)"
+                              ><iconify-icon
+                                icon="solar:star-bold"
+                                class="fs-6"
+                                style="color: gold"
+                              ></iconify-icon
+                            ></a>
+                          </li>
+                          <li>
+                            <a class="hstack" href="javascript:void(0)"
+                              ><iconify-icon
+                                icon="solar:star-bold"
+                                class="fs-6"
+                                style="color: gold"
+                              ></iconify-icon
+                            ></a>
+                          </li>
+                          <li>
+                            <a class="hstack" href="javascript:void(0)"
+                              ><iconify-icon
+                                icon="solar:star-bold"
+                                class="fs-6"
+                                style="color: gold"
+                              ></iconify-icon
+                            ></a>
+                          </li>
+                          <li>
+                            <a class="hstack" href="javascript:void(0)"
+                              ><iconify-icon
+                                icon="solar:star-bold"
+                                class="fs-6"
+                                style="color: gold"
+                              ></iconify-icon
+                            ></a>
+                          </li>
+                          <li>
+                            <a class="hstack" href="javascript:void(0)"
+                              ><iconify-icon
+                                icon="solar:star-line-duotone"
+                                class="fs-6 text-white"
+                              ></iconify-icon
+                            ></a>
+                          </li>
+                        </ul>
+                        <h6 class="mb-0 text-white fw-medium">4.0</h6>
+                      </div>
+                    </div>
+                    <div
+                      class="d-flex align-items-center justify-content-between"
+                    >
+                      <div class="hstack gap-3">
+                        <img
+                          src="../assets/images/testimonial/testimonial-2.jpg"
+                          alt=""
+                          class="img-fluid rounded-circle overflow-hidden flex-shrink-0"
+                          width="60"
+                          height="60"
+                        />
+                        <div>
+                          <h5 class="mb-1 fw-normal text-white">Our Client</h5>
+                          <p class="mb-0 text-white opacity-75">
+                            Bangalore, Karnataka
+                          </p>
+                        </div>
+                      </div>
+                      <span
+                        ><img
+                          src="../assets/images/testimonial/quete.svg"
+                          alt="quete"
+                          class="img-fluid flex-shrink-0"
+                      /></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-xl-3 d-flex align-items-stretch">
+                <div
+                  class="card w-100"
+                  data-aos="fade-up"
+                  data-aos-delay="300"
+                  data-aos-duration="1000"
+                >
+                  <div
+                    class="card-body d-flex flex-column gap-5 gap-xl-11 justify-content-between"
+                  >
+                    <div class="d-flex flex-column gap-4">
+                      <p class="mb-0">Hear from them</p>
+                      <h4 class="mb-0">
+                        ASPL handled all my marketplace management in one place,
+                        making everything effortless for me.
+                      </h4>
+                    </div>
+                    <div class="hstack gap-3">
+                      <img
+                        src="../assets/images/testimonial/testimonial-3.jpg"
+                        alt=""
+                        class="img-fluid rounded-circle overflow-hidden flex-shrink-0"
+                        width="60"
+                        height="60"
+                      />
+                      <div>
+                        <h5 class="mb-1 fw-normal">Our Client</h5>
+                        <p class="mb-0">Bangalore, Karnataka</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--  Meet our team Section -->
+      <section
+        class="meet-our-team py-5 py-lg-11 py-xl-12"
+        style="background: #fff"
+      >
+        <div class="container">
+          <div class="d-flex flex-column gap-5 gap-xl-11">
+            <div class="row gap-7 gap-xl-0">
+              <div class="col-xl-4 col-xxl-4">
+                <div
+                  class="d-flex align-items-center gap-7 py-2"
+                  data-aos="fade-right"
+                  data-aos-delay="100"
+                  data-aos-duration="1000"
+                >
+                  <span
+                    class="round-36 flex-shrink-0 text-dark rounded-circle bg-primary hstack justify-content-center fw-medium"
+                    style="
+                      background-color: #ff8100 !important;
+                      color: #fff !important;
+                    "
+                    >05</span
+                  >
+                  <hr class="border-line bg-white" />
+                  <span class="badge" style="background-color: #0fa092"
+                    >Services</span
+                  >
+                </div>
+              </div>
+              <div class="col-xl-8 col-xxl-7">
+                <div class="row">
+                  <div class="col-xxl-8">
+                    <div
+                      class="d-flex flex-column gap-6"
+                      data-aos="fade-up"
+                      data-aos-delay="100"
+                      data-aos-duration="1000"
+                    >
+                      <h2 class="mb-0" style="color: #0f2440">Our Services</h2>
+                      <p class="fs-5 mb-0 text-opacity-90">
+                        Our services are designed to support businesses and
+                        individuals with reliable solutions, expert guidance,
+                        and hands-on support that drive real growth and lasting
+                        results.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 col-xl-3 mb-7 mb-xl-0">
+                <div
+                  class="meet-team d-flex flex-column gap-4"
+                  data-aos="fade-up"
+                  data-aos-delay="100"
+                  data-aos-duration="1000"
+                >
+                  <div class="meet-team-img position-relative overflow-hidden">
+                    <img
+                      src="../assets/images/aspLImages/businessServices.gif"
+                      alt="team-img"
+                      class="img-fluid w-100"
+                    />
+                    <div
+                      class="meet-team-overlay p-7 d-flex flex-column justify-content-end"
+                    >
+                      <ul
+                        class="social list-unstyled mb-0 hstack gap-2 justify-content-end"
+                      >
+                        <li style="color: #fff">
+                          We help businesses with everything they need, from
+                          setup to execution, without complicating the process.
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="meet-team-details">
+                    <h4 class="mb-0 fs-">Business Services (End-to-End)</h4>
+                    <p class="mb-0">Creative Director</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-xl-3 mb-7 mb-xl-0">
+                <div
+                  class="meet-team d-flex flex-column gap-4"
+                  data-aos="fade-up"
+                  data-aos-delay="200"
+                  data-aos-duration="1000"
+                >
+                  <div class="meet-team-img position-relative overflow-hidden">
+                    <img
+                      src="../assets/images/aspLImages/DigitalMarketing.gif"
+                      alt="team-img"
+                      class="img-fluid w-100"
+                    />
+                    <div
+                      class="meet-team-overlay p-7 d-flex flex-column justify-content-end"
+                    >
+                      <ul
+                        class="social list-unstyled mb-0 hstack gap-2 justify-content-end"
+                      >
+                        <li style="color: #fff">
+                          Google Ads, Meta Ads, SEO, Branding, Labs, Funnels
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="meet-team-details">
+                    <h4 class="mb-0">Digital Marketing</h4>
+                    <p class="mb-0">Marketing Strategist</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-xl-3 mb-7 mb-xl-0">
+                <div
+                  class="meet-team d-flex flex-column gap-4"
+                  data-aos="fade-up"
+                  data-aos-delay="300"
+                  data-aos-duration="1000"
+                >
+                  <div class="meet-team-img position-relative overflow-hidden">
+                    <img
+                      src="../assets/images/aspLImages/Tech.gif"
+                      alt="team-img"
+                      class="img-fluid w-100"
+                    />
+                    <div
+                      class="meet-team-overlay p-7 d-flex flex-column justify-content-end"
+                    >
+                      <ul
+                        class="social list-unstyled mb-0 hstack gap-2 justify-content-end"
+                      >
+                        <li style="color: #fff">
+                          Web Development, AWS, GitHub Actions, DevOps setup,
+                          automation pipelines
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="meet-team-details">
+                    <h4 class="mb-0">Tech & Cloud Consulting</h4>
+                    <p class="mb-0">Lead Designer</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-xl-3 mb-7 mb-xl-0">
+                <div
+                  class="meet-team d-flex flex-column gap-4"
+                  data-aos="fade-up"
+                  data-aos-delay="400"
+                  data-aos-duration="1000"
+                >
+                  <div class="meet-team-img position-relative overflow-hidden">
+                    <video class="bg-video" autoplay muted loop playsinline>
+                      <source
+                        src="../assets/images/aspLImages/about_prod.mkv"
+                        type="video/mp4"
+                      />
+                    </video>
+                    <div
+                      class="meet-team-overlay p-7 d-flex flex-column justify-content-end"
+                    >
+                      <ul
+                        class="social list-unstyled mb-0 hstack gap-2 justify-content-end"
+                      >
+                        <li style="color: #fff">
+                          Complete setup, shooting, editing, and creative
+                          direction
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="meet-team-details">
+                    <h4 class="mb-0">Podcast Production</h4>
+                    <p class="mb-0">UX/UI Developer</p>
+                  </div>
+                </div>
+              </div>
+
+              <div style="text-align: center; margin-top: 70px">
+                <a
+                  href="projects.html"
+                  class="btn border border-white border-opacity-25"
+                  data-aos="fade-up"
+                  data-aos-delay="300"
+                  data-aos-duration="1000"
+                >
+                  <span class="btn-text" style="color: #fff">See our Work</span>
+                  <iconify-icon
+                    icon="lucide:arrow-up-right"
+                    class="btn-icon bg-white text-dark round-52 rounded-circle hstack justify-content-center fs-7 shadow-sm"
+                  ></iconify-icon>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--clients-->
+      <div
+        class="d-flex flex-column gap-8"
+        data-aos="fade-up"
+        data-aos-delay="100"
+        data-aos-duration="1000"
+      >
+        <p class="fs-5 mb-0 text-center text-dark">
+          More than 320 trusted partners & clients
+        </p>
+
+        <div class="marquee w-100 d-flex align-items-center overflow-hidden">
+          <div class="marquee-content d-flex align-items-center gap-8">
+            <div class="marquee-tag hstack justify-content-center">
+              <img
+                src="../assets/images/clients/client-19.jpg"
+                alt="client"
+                class="img-fluid"
+              />
+            </div>
+
+            <div class="marquee-tag hstack justify-content-center">
+              <img
+                src="../assets/images/clients/client-20.jpg"
+                alt="client"
+                class="img-fluid"
+              />
+            </div>
+
+            <div class="marquee-tag hstack justify-content-center">
+              <img
+                src="../assets/images/clients/client-21.jpg"
+                alt="client"
+                class="img-fluid"
+              />
+            </div>
+
+            <div class="marquee-tag hstack justify-content-center">
+              <img
+                src="../assets/images/clients/client-22.jpg"
+                alt="client"
+                class="img-fluid"
+              />
+            </div>
+
+            <div class="marquee-tag hstack justify-content-center">
+              <img
+                src="../assets/images/clients/logo.png"
+                alt="client"
+                class="img-fluid"
+              />
+            </div>
+            <div class="marquee-tag hstack justify-content-center">
+              <img
+                src="../assets/images/clients/client-23.jpg"
+                alt="client"
+                class="img-fluid"
+              />
+            </div>
+            <div class="marquee-tag hstack justify-content-center">
+              <img
+                src="../assets/images/clients/client-17.jpg"
+                alt="client"
+                class="img-fluid"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--  FAQ Section -->
+      <section class="faq py-5 py-lg-11 py-xl-12">
+        <div class="container">
+          <div class="d-flex flex-column gap-5 gap-xl-11">
+            <div class="row gap-7 gap-xl-0">
+              <div class="col-xl-4 col-xxl-4">
+                <div
+                  class="d-flex align-items-center gap-7 py-2"
+                  data-aos="fade-right"
+                  data-aos-delay="100"
+                  data-aos-duration="1000"
+                >
+                  <span
+                    class="round-36 flex-shrink-0 text-dark rounded-circle bg-primary hstack justify-content-center fw-medium"
+                    style="
+                      background-color: #ff8100 !important;
+                      color: #fff !important;
+                    "
+                    >06</span
+                  >
+                  <hr class="border-line bg-white" />
+                  <span class="badge" style="background-color: #0fa092"
+                    >FAQs</span
+                  >
+                </div>
+              </div>
+              <div class="col-xl-8 col-xxl-7">
+                <div class="row">
+                  <div class="col-xxl-9">
+                    <div
+                      class="d-flex flex-column gap-6"
+                      data-aos="fade-up"
+                      data-aos-delay="100"
+                      data-aos-duration="1000"
+                    >
+                      <h2 class="mb-0" style="color: #0f2440">
+                        Frequently asked questions
+                      </h2>
+                      <p class="fs-5 mb-0 text-opacity-70">
+                        Discover how we tailor our solutions to meet unique
+                        needs, delivering impactful strategies, personalized
+                        branding, and exceptional customer experiences.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row justify-content-end">
+              <div class="col-xl-8">
+                <div
+                  class="accordion accordion-flush"
+                  id="accordionFlushExample"
+                  data-aos="fade-up"
+                  data-aos-delay="200"
+                  data-aos-duration="1000"
+                >
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button
+                        class="accordion-button collapsed fs-8 fw-bold"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseOne"
+                        aria-expanded="false"
+                        aria-controls="flush-collapseOne"
+                      >
+                        What services does your agency offer?
+                      </button>
+                    </h2>
+                    <div
+                      id="flush-collapseOne"
+                      class="accordion-collapse collapse"
+                      data-bs-parent="#accordionFlushExample"
+                    >
+                      <div class="accordion-body pt-0 fs-5 text-dark">
+                        Yes, we provide post-launch support to ensure smooth
+                        implementation and offer ongoing maintenance packages
+                        for clients needing regular updates or technical
+                        assistance.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button
+                        class="accordion-button collapsed fs-8 fw-bold"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseTwo"
+                        aria-expanded="false"
+                        aria-controls="flush-collapseTwo"
+                      >
+                        How long does a typical project take?
+                      </button>
+                    </h2>
+                    <div
+                      id="flush-collapseTwo"
+                      class="accordion-collapse collapse"
+                      data-bs-parent="#accordionFlushExample"
+                    >
+                      <div class="accordion-body pt-0 fs-5 text-dark">
+                        Yes, we provide post-launch support to ensure smooth
+                        implementation and offer ongoing maintenance packages
+                        for clients needing regular updates or technical
+                        assistance.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button
+                        class="accordion-button collapsed fs-8 fw-bold"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseThree"
+                        aria-expanded="false"
+                        aria-controls="flush-collapseThree"
+                      >
+                        Do you offer custom designs, or do you use templates?
+                      </button>
+                    </h2>
+                    <div
+                      id="flush-collapseThree"
+                      class="accordion-collapse collapse"
+                      data-bs-parent="#accordionFlushExample"
+                    >
+                      <div class="accordion-body pt-0 fs-5 text-dark">
+                        Yes, we provide post-launch support to ensure smooth
+                        implementation and offer ongoing maintenance packages
+                        for clients needing regular updates or technical
+                        assistance.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button
+                        class="accordion-button collapsed fs-8 fw-bold"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseFour"
+                        aria-expanded="false"
+                        aria-controls="flush-collapseFour"
+                      >
+                        What’s the cost of a project?
+                      </button>
+                    </h2>
+                    <div
+                      id="flush-collapseFour"
+                      class="accordion-collapse collapse"
+                      data-bs-parent="#accordionFlushExample"
+                    >
+                      <div class="accordion-body pt-0 fs-5 text-dark">
+                        Yes, we provide post-launch support to ensure smooth
+                        implementation and offer ongoing maintenance packages
+                        for clients needing regular updates or technical
+                        assistance.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item border-bottom">
+                    <h2 class="accordion-header">
+                      <button
+                        class="accordion-button collapsed fs-8 fw-bold"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseFive"
+                        aria-expanded="false"
+                        aria-controls="flush-collapseFive"
+                      >
+                        Do you provide ongoing support after project completion?
+                      </button>
+                    </h2>
+                    <div
+                      id="flush-collapseFive"
+                      class="accordion-collapse collapse"
+                      data-bs-parent="#accordionFlushExample"
+                    >
+                      <div class="accordion-body pt-0 fs-5 text-dark">
+                        Yes, we provide post-launch support to ensure smooth
+                        implementation and offer ongoing maintenance packages
+                        for clients needing regular updates or technical
+                        assistance.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <footer class="footer pt-5 pb-3" style="background-color: #0f2440">
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-5 mb-8 mb-xl-0">
+            <div class="d-flex flex-column gap-8 pe-xl-5">
+              <h2 class="mb-0 text-white">Build something together?</h2>
+              <div class="d-flex flex-column gap-2">
+                <style>
+                  .footer-hover:hover {
+                    color: #ff8100 !important;
+                  }
+                  .footer-hover:hover iconify-icon {
+                    color: #ff8100 !important;
+                  }
+                </style>
+
+                <a
+                  href="https://aspltech.in/"
+                  target="_blank"
+                  class="link-hover hstack gap-3 text-white fs-5 footer-hover"
+                >
+                  <iconify-icon
+                    icon="lucide:arrow-up-right"
+                    class="fs-7 text-white"
+                  ></iconify-icon>
+                  info@aspltech.in
+                </a>
+
+                <a
+                  href="http://bit.ly/480pS6P"
+                  target="_blank"
+                  class="link-hover hstack gap-3 text-white fs-5 footer-hover"
+                >
+                  <iconify-icon
+                    icon="lucide:map-pin"
+                    class="fs-7 text-white"
+                  ></iconify-icon>
+                  ASPL
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-xl-2 mb-8 mb-xl-0">
+            <style>
+              .footer-menu a:hover {
+                color: #ff8100 !important;
+              }
+            </style>
+
+            <ul class="footer-menu list-unstyled mb-0 d-flex flex-column gap-2">
+              <li>
+                <a class="link-hover fs-5 text-white" href="index.html">Home</a>
+              </li>
+              <li>
+                <a class="link-hover fs-5 text-white" href="about-us.html"
+                  >About</a
+                >
+              </li>
+              <li>
+                <a
+                  class="link-hover fs-5 text-white"
+                  id="services"
+                  href="#services"
+                  >Services</a
+                >
+              </li>
+              <li>
+                <a class="link-hover fs-5 text-white" href="careers.html"
+                  >Careers</a
+                >
+              </li>
+              <li>
+                <a class="link-hover fs-5 text-white" href="contact.html"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-4 col-xl-2 mb-8 mb-xl-0">
+            <style>
+              .social-link:hover {
+                color: #ff8100 !important;
+              }
+              .social-link:hover iconify-icon {
+                color: #ff8100 !important;
+              }
+            </style>
+
+            <ul class="footer-menu list-unstyled mb-0 d-flex flex-column gap-2">
+              <a
+                class="link-hover fs-5 text-white d-flex align-items-center gap-2 social-link"
+                href="https://www.linkedin.com/company/aspl-tech-solutions/"
+                target="_blank"
+              >
+                <iconify-icon
+                  icon="mdi:linkedin"
+                  class="fs-5 text-white"
+                ></iconify-icon>
+                LinkedIn
+              </a>
+              <a
+                class="link-hover fs-5 text-white d-flex align-items-center gap-2 social-link"
+                href="https://www.instagram.com/aspltechsolutions?igsh=bnRvNWVwenJ0cHIx&utm_source=qr"
+                target="_blank"
+              >
+                <iconify-icon
+                  icon="mdi:instagram"
+                  class="fs-5 text-white"
+                ></iconify-icon>
+                Instagram
+              </a>
+              <a
+                class="link-hover fs-5 text-white d-flex align-items-center gap-2 social-link"
+                href="https://www.facebook.com/share/1FqnA1k37Y/"
+                target="_blank"
+              >
+                <iconify-icon
+                  icon="mdi:facebook"
+                  class="fs-5 text-white"
+                ></iconify-icon>
+                Facebook
+              </a>
+              <a
+                class="link-hover fs-5 text-white d-flex align-items-center gap-2 social-link"
+                href="https://www.threads.com/@aspltechsolutions"
+                target="_blank"
+              >
+                <iconify-icon
+                  icon="simple-icons:threads"
+                  class="fs-5 text-white"
+                ></iconify-icon>
+                Threads
+              </a>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <hr class="border-white mt-0 mt-md-5" />
+      <p class="text-white text-opacity-70 text-md-center mt-4 text-center">
+        © 2025
+        <a class="text-white" href="https://aspltech.in/" target="_blank"
+          >ASPL</a
+        >
+        Tech Solutions Private Limited. All rights reserved. | Crafted with
+        passion in Bangalore.
+      </p>
+    </footer>
+
+    <div class="floating-buttons">
+      <a
+        href="https://wa.me/9843406360"
+        class="whatsapp-float pulse"
+        target="_blank"
+      >
+        <img
+          src="https://img.icons8.com/color/48/whatsapp.png"
+          alt="WhatsApp"
+        />
+      </a>
+
+      <button
+        class="btn p-2 rounded-circle scroll-btn"
+        id="scrollToTopBtn"
+        style="background-color: #ff8100"
+      >
+        <iconify-icon icon="lucide:arrow-up" class="fs-7" style="color: #fff">
+        </iconify-icon>
+      </button>
+    </div>
+
+    <script src="../assets/libs/jquery/dist/jquery.min.js"></script>
+    <script src="../assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/libs/owl.carousel/dist/owl.carousel.min.js"></script>
+    <script src="../assets/libs/aos-master/dist/aos.js"></script>
+    <script src="../assets/js/custom.js"></script>
+    <!-- solar icons -->
+    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
+  </body>
+</html>

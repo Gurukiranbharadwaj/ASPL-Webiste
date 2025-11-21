@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ASPL Tech Solutions Pvt Ltd</title>
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="../assets/images/logos/favicon.svg"
+    />
+    <link
+      rel="stylesheet"
+      href="../assets/libs/owl.carousel/dist/assets/owl.carousel.min.css"
+    />
+    <link rel="stylesheet" href="../assets/libs/aos-master/dist/aos.css" />
+    <link rel="stylesheet" href="../assets/css/styles.css" />
+
+    <style>
+      .ptext {
+        color: #fff;
+        padding: 30px;
+        line-height: 40px;
+      }
+
+      .pbtn {
+        position: absolute;
+        top: 80%;
+        right: 2%;
+        transform: translate(-50%, -50%);
+        background-color: #ff8100;
+      }
+      .hrT {
+        width: 35%;
+        margin-top: 70px;
+      }
+      .hrM {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
+
+    <style>
+      /* Parent container - fixed to right side */
+      .floating-buttons {
+        position: fixed;
+        bottom: 10%;
+        right: 5%;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        z-index: 9999;
+      }
+
+      /* WhatsApp Button */
+      .whatsapp-float {
+        width: 60px;
+        height: 60px;
+        background-color: #25d366;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        cursor: pointer;
+      }
+
+      /* WhatsApp Icon */
+      .whatsapp-float img {
+        width: 35px;
+        height: 35px;
+      }
+
+      /* Scroll-to-top button */
+      .scroll-btn {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      /* Pulse Animation */
+      .pulse {
+        animation: pulseAnimation 1.5s ease-out infinite;
+      }
+
+      @keyframes pulseAnimation {
+        0% {
+          transform: scale(1);
+          box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+        }
+        70% {
+          transform: scale(1.05);
+          box-shadow: 0 0 0 18px rgba(37, 211, 102, 0);
+        }
+        100% {
+          transform: scale(1);
+          box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+        }
+      }
+    </style>
+
+    <style>
+      .bg-video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 0;
+        opacity: 1; /* adjust if needed */
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Header ------------ -->
+    <header class="header position-fixed start-0 top-0 w-100">
+      <div class="container">
+        <div
+          class="header-wrapper d-flex align-items-center justify-content-between"
+        >
+          <div class="logo">
+            <a href="index.html" class="logo-white">
+              <img
+                src="https://aspltech.in/images/logo.png"
+                alt="logo"
+                class="img-fluid"
+                style="max-width: 130px; height: auto"
+              />
+            </a>
+            <a href="index.html" class="logo-dark">
+              <img
+                src="https://aspltech.in/images/logo.png"
+                alt="logo"
+                class="img-fluid"
+                style="max-width: 130px; height: auto"
+              />
+            </a>
+          </div>
+          <div class="d-flex align-items-center gap-4">
+            <div class="btn-group">
+              <button
+                class="btn btn-secondary toggle-menu round-45 p-2 d-flex align-items-center justify-content-center bg-white rounded-circle"
+                style="background-color: #ff8100 !important"
+                type="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="true"
+                aria-expanded="false"
+              >
+                <iconify-icon
+                  icon="solar:hamburger-menu-line-duotone"
+                  class="menu-icon fs-8"
+                  style="color: #fff !important"
+                ></iconify-icon>
+              </button>
+              <ul class="dropdown-menu dropdown-menu-end p-4">
+                <div class="d-flex flex-column gap-6">
+                  <div
+                    class="hstack justify-content-between border-bottom pb-6"
+                  >
+                    <p class="mb-0 fs-5 text-dark">Menu</p>
+                    <button
+                      type="button"
+                      class="btn-close opacity-75"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="d-flex flex-column gap-3">
+                    <ul
+                      class="header-menu list-unstyled mb-0 d-flex flex-column gap-2"
+                    >
+                      <li class="header-item">
+                        <a
+                          href="index.html"
+                          class="header-link hstack gap-2 fs-7 fw-bold text-dark"
+                          ><img
+                            src="../assets/images/svgs/secondary-leaf.svg"
+                            alt=""
+                            width="20"
+                            height="20"
+                            class="img-fluid animate-spin"
+                          />Home</a
+                        >
+                      </li>
+                      <li class="header-item">
+                        <a
+                          href="about-us.html"
+                          class="header-link hstack gap-2 fs-7 fw-bold text-dark"
+                          ><img
+                            src="../assets/images/svgs/secondary-leaf.svg"
+                            alt=""
+                            width="20"
+                            height="20"
+                            class="img-fluid animate-spin"
+                          />About</a
+                        >
+                      </li>
+                      <li class="header-item">
+                        <a
+                          href="projects.html"
+                          class="header-link hstack gap-2 fs-7 fw-bold text-dark"
+                          ><img
+                            src="../assets/images/svgs/secondary-leaf.svg"
+                            alt=""
+                            width="20"
+                            height="20"
+                            class="img-fluid animate-spin"
+                          />Our Services</a
+                        >
+                      </li>
+                      <li class="header-item">
+                        <a
+                          href="careers.html"
+                          aria-current="true"
+                          class="header-link active hstack gap-2 fs-7 fw-bold text-dark"
+                          ><img
+                            src="../assets/images/svgs/secondary-leaf.svg"
+                            alt=""
+                            width="20"
+                            height="20"
+                            class="img-fluid animate-spin"
+                          />Careers</a
+                        >
+                      </li>
+
+                      <li class="header-item">
+                        <a
+                          href="contact.html"
+                          class="header-link hstack gap-2 fs-7 fw-bold text-dark"
+                          ><img
+                            src="../assets/images/svgs/secondary-leaf.svg"
+                            alt=""
+                            width="20"
+                            height="20"
+                            class="img-fluid animate-spin"
+                          />Contact</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                  <div>
+                    <a class="text-dark" href="tel:+1-212-456-7890"
+                      >+91 9843406360</a
+                    >
+                    <a
+                      class="fs-8 text-dark fw-bold"
+                      href="mailto:info@aspltech.in"
+                      >info@aspltech.in</a
+                    >
+                  </div>
+                </div>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Page content  ---------->
+    <div class="page-wrapper overflow-hidden">
+      <!-- Banner Section -->
+      <section
+        class="banner-section banner-inner-section position-relative overflow-hidden d-flex align-items-end"
+        style="position: relative"
+      >
+        <!-- Background Video -->
+        <video class="bg-video" autoplay muted loop playsinline>
+          <source
+            src="../assets/images/aspLImages/CareerBG.mkv"
+            type="video/mp4"
+          />
+        </video>
+
+        <div class="container position-relative z-1">
+          <div class="d-flex flex-column gap-4 pb-5 pb-xl-10">
+            <div class="row align-items-center">
+              <div class="col-xl-4">
+                <div
+                  class="d-flex align-items-center gap-4"
+                  data-aos="fade-up"
+                  data-aos-delay="100"
+                  data-aos-duration="1000"
+                >
+                  <img
+                    src="../assets/images/svgs/primary-leaf.svg"
+                    alt=""
+                    class="img-fluid animate-spin"
+                  />
+                  <p class="mb-0 text-white fs-5 text-opacity-70">
+                    From coding to
+                    <span style="color: #ff8100">Creativity,</span><br />
+                    business to <span style="color: #ff8100">Technology.</span
+                    ><br />
+                    --find your calling.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="d-flex align-items-end gap-3"
+              data-aos="fade-up"
+              data-aos-delay="200"
+              data-aos-duration="1000"
+            >
+              <h1 class="mb-0 fs-16 text-white lh-1">Career Path</h1>
+              <a
+                href="javascript:void(0)"
+                class="p-1 ps-7 rounded-pill"
+                style="background-color: #0f2440"
+              >
+                <span
+                  class="bg-white round-52 rounded-circle d-flex align-items-center justify-content-center"
+                >
+                  <iconify-icon
+                    icon="lucide:arrow-up-right"
+                    class="fs-8"
+                    style="color: #0f2440"
+                  ></iconify-icon>
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Stats Section -->
+      <section
+        class="stats-facts py-5 py-lg-11 py-xl-12 position-relative overflow-hidden"
+      >
+        <div class="container">
+          <div class="row gap-7 gap-xl-0">
+            <div class="col-xl-4 col-xxl-4"></div>
+
+            <div class="col-xl-8 col-xxl-7">
+              <div class="d-flex flex-column gap-9">
+                <div class="row">
+                  <div class="col-xxl-8">
+                    <div
+                      class="d-flex flex-column gap-6"
+                      data-aos="fade-up"
+                      data-aos-delay="100"
+                      data-aos-duration="1000"
+                    >
+                      <h2 class="mb-0" style="color: #0f2440">
+                        Where Ambition Meets Opportunity
+                      </h2>
+                      <p class="fs-5 mb-0" style="color: #0f2440">
+                        This isn't just another online course. It's your career
+                        transformation. Industry-vetted curriculum.
+                        Battle-tested instructors. Real projects. Real results.
+                        <br /><span style="color: #0f2440"
+                          >Welcome to where you stop learning and start
+                          earning.</span
+                        >
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <!-- Box 1 -->
+                  <div
+                    class="col-md-5 col-lg-3 mb-7 mb-lg-0 text-center text-md-start"
+                  >
+                    <div
+                      class="d-flex flex-column gap-6 pt-9 border-top"
+                      data-aos="fade-up"
+                      data-aos-delay="200"
+                      data-aos-duration="1000"
+                    >
+                      <h2 class="mb-0 fs-11">
+                        <span
+                          style="color: #0f2440"
+                          data-target="40"
+                          class="count"
+                          >15</span
+                        >
+                        <span style="color: #ff8100">+</span>
+                      </h2>
+                      <p class="mb-0">Career Programs</p>
+                    </div>
+                  </div>
+
+                  <!-- Box 2 -->
+                  <div
+                    class="col-md-5 col-lg-3 mb-7 mb-lg-0 text-center text-md-start"
+                  >
+                    <div
+                      class="d-flex flex-column gap-6 pt-9 border-top"
+                      data-aos="fade-up"
+                      data-aos-delay="300"
+                      data-aos-duration="1000"
+                    >
+                      <h2 class="mb-0 fs-11">
+                        <span
+                          style="color: #0f2440"
+                          data-target="238"
+                          class="count"
+                          >92</span
+                        >
+                        <span style="color: #ff8100">%</span>
+                      </h2>
+                      <p class="mb-0">Placement Rate</p>
+                    </div>
+                  </div>
+
+                  <!-- Box 3 -->
+                  <div
+                    class="col-md-5 col-lg-3 mb-7 mb-lg-0 text-center text-md-start"
+                  >
+                    <div
+                      class="d-flex flex-column gap-6 pt-9 border-top"
+                      data-aos="fade-up"
+                      data-aos-delay="400"
+                      data-aos-duration="1000"
+                    >
+                      <h2 class="mb-0 fs-11">
+                        <span
+                          style="color: #0f2440"
+                          data-target="3"
+                          class="count"
+                          >50</span
+                        >
+                        <span style="color: #ff8100">+</span>
+                      </h2>
+                      <p class="mb-0">Industry Mentors</p>
+                    </div>
+                  </div>
+
+                  <!-- Box 4 -->
+                  <div
+                    class="col-md-5 col-lg-3 mb-7 mb-lg-0 text-center text-md-start"
+                  >
+                    <div
+                      class="d-flex flex-column gap-6 pt-9 border-top"
+                      data-aos="fade-up"
+                      data-aos-delay="500"
+                      data-aos-duration="1000"
+                    >
+                      <h2 class="mb-0 fs-11">
+                        <span
+                          style="color: #0f2440"
+                          data-target="3"
+                          class="count"
+                          >2000</span
+                        >
+                        <span style="color: #ff8100">+</span>
+                      </h2>
+                      <p class="mb-0">Success Stories</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="position-absolute bottom-0 start-0 mb-0"
+          data-aos="zoom-in"
+          data-aos-delay="100"
+          data-aos-duration="1000"
+        >
+          <img
+            src="../assets/images/backgrounds/stats-facts-bg.svg"
+            alt=""
+            class="img-fluid"
+          />
+        </div>
+      </section>
+
+      <!-- Project Section -->
+      <section class="project py-5 mt-5">
+        <h2 class="text-center mb-lg-5" style="color: #0f2440">Career Path</h2>
+
+        <div class="container column-gap-lg-4">
+          <div class="row justify-content-center">
+            <!-- Card 1 -->
+            <div class="col-lg-5 mb-7 mx-6">
+              <div
+                class="portfolio d-flex flex-column gap-5"
+                data-aos="fade-up"
+                data-aos-delay="100"
+                data-aos-duration="1000"
+              >
+                <div class="portfolio-img position-relative overflow-hidden">
+                  <!-- Background Video -->
+                  <video class="bg-video" autoplay muted loop playsinline>
+                    <source
+                      src="../assets/images/aspLImages/career_tech.mkv"
+                      type="video/mp4"
+                    />
+                  </video>
+                  <div class="portfolio-overlay">
+                    <div class="position-relative">
+                      <p class="ptext">
+                        Full-Stack Development,<br />Python Programming,<br />
+                        AI & Machine Learning,<br />Data Science,<br />
+                        Web Development,<br />UI/UX Design
+                      </p>
+                    </div>
+                    <a
+                      href="projects-detail.html"
+                      class="pbtn round-64 rounded-circle hstack justify-content-center"
+                    >
+                      <iconify-icon
+                        icon="lucide:arrow-up-right"
+                        class="fs-8 text-white"
+                      ></iconify-icon>
+                    </a>
+                  </div>
+                </div>
+                <div class="portfolio-details d-flex flex-column">
+                  <h3 class="mb-0" style="color: #0f2440">
+                    Tech & Development
+                  </h3>
+                  <p class="mb-0">Build the future with code</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="col-lg-5 mb-7 mx-6">
+              <div
+                class="portfolio d-flex flex-column gap-5"
+                data-aos="fade-up"
+                data-aos-delay="200"
+                data-aos-duration="1000"
+              >
+                <div class="portfolio-img position-relative overflow-hidden">
+                  <!-- Background Video -->
+                  <video class="bg-video" autoplay muted loop playsinline>
+                    <source
+                      src="../assets/images/aspLImages/career_business.mkv"
+                      type="video/mp4"
+                    />
+                  </video>
+                  <div class="portfolio-overlay">
+                    <div class="position-relative">
+                      <p class="ptext">
+                        Power BI Mastery,<br />Advanced Excel,<br />
+                        Tally Prime,<br />AutoCAD,<br />Scrum & Agile
+                      </p>
+                    </div>
+                    <a
+                      href="projects-detail.html"
+                      class="pbtn round-64 rounded-circle hstack justify-content-center"
+                    >
+                      <iconify-icon
+                        icon="lucide:arrow-up-right"
+                        class="fs-8 text-white"
+                      ></iconify-icon>
+                    </a>
+                  </div>
+                </div>
+                <div class="portfolio-details d-flex flex-column">
+                  <h3 class="mb-0" style="color: #0f2440">
+                    Business & Analytics
+                  </h3>
+                  <p class="mb-0">Master the tools of success</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="col-lg-5 mb-7 mx-6">
+              <div
+                class="portfolio d-flex flex-column gap-6"
+                data-aos="fade-up"
+                data-aos-delay="300"
+                data-aos-duration="1000"
+              >
+                <div class="portfolio-img position-relative overflow-hidden">
+                  <video class="bg-video" autoplay muted loop playsinline>
+                    <source
+                      src="../assets/images/aspLImages/careers_creative.mkv"
+                      type="video/mp4"
+                    />
+                  </video>
+                  <div class="portfolio-overlay">
+                    <div class="position-relative">
+                      <p class="ptext">
+                        Digital Marketing,<br />Graphic Design,<br />
+                        Content Strategy,<br />Social Media,<br />
+                        Brand Building
+                      </p>
+                    </div>
+                    <a
+                      href="projects-detail.html"
+                      class="pbtn round-64 rounded-circle hstack justify-content-center"
+                    >
+                      <iconify-icon
+                        icon="lucide:arrow-up-right"
+                        class="fs-8 text-white"
+                      ></iconify-icon>
+                    </a>
+                  </div>
+                </div>
+                <div class="portfolio-details d-flex flex-column">
+                  <h3 class="mb-1" style="color: #0f2440">
+                    Creative & Digital
+                  </h3>
+                  <p class="mb-0">Design. Market. Influence.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="col-lg-5 mb-7 mx-6">
+              <div
+                class="portfolio d-flex flex-column gap-6"
+                data-aos="fade-up"
+                data-aos-delay="400"
+                data-aos-duration="1000"
+              >
+                <div class="portfolio-img position-relative overflow-hidden">
+                  <video class="bg-video" autoplay muted loop playsinline>
+                    <source
+                      src="../assets/images/aspLImages/careers_business.mkv"
+                      type="video/mp4"
+                    />
+                  </video>
+                  <div class="portfolio-overlay">
+                    <div class="position-relative">
+                      <p class="ptext">
+                        Communication,<br />Leadership,<br />
+                        Spoken English,<br />Networking,<br />
+                        Robotics
+                      </p>
+                    </div>
+                    <a
+                      href="projects-detail.html"
+                      class="pbtn round-64 rounded-circle hstack justify-content-center"
+                    >
+                      <iconify-icon
+                        icon="lucide:arrow-up-right"
+                        class="fs-8 text-white"
+                      ></iconify-icon>
+                    </a>
+                  </div>
+                </div>
+                <div class="portfolio-details d-flex flex-column gap-3">
+                  <h3 class="mb-0" style="color: #0f2440">
+                    Professional Skills
+                  </h3>
+                  <p class="mb-0">Skills that set you apart</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- HR Section -->
+      <section class="hrM meet-our-team py-5">
+        <div class="container">
+          <div class="d-flex flex-column gap-5 gap-xl-11">
+            <div class="row gap-7 gap-xl-0">
+              <div class="col-xl-4 col-xxl-4">
+                <div
+                  class="d-flex align-items-center gap-7 py-2"
+                  data-aos="fade-right"
+                  data-aos-delay="100"
+                  data-aos-duration="1000"
+                >
+                  <span
+                    class="round-36 flex-shrink-0 text-white rounded-circle hstack justify-content-center fw-medium"
+                    style="background-color: #ff8100"
+                  >
+                    01
+                  </span>
+                  <hr class="border-line bg-white" />
+                  <span
+                    class="badge"
+                    style="color: #fff; background-color: #0fa092"
+                    >Recruitment</span
+                  >
+                </div>
+              </div>
+
+              <div class="col-xl-8 col-xxl-7">
+                <div class="row">
+                  <div class="col-xxl-8">
+                    <div
+                      class="d-flex flex-column gap-6"
+                      data-aos="fade-up"
+                      data-aos-delay="100"
+                      data-aos-duration="1000"
+                    >
+                      <h2 class="mb-0" style="color: #0f2440">
+                        HR & Recruitment
+                      </h2>
+                      <p class="fs-5 mb-0 text-opacity-90">
+                        We offer recruitment, staffing, and internship programs
+                        that help businesses find the right talent while giving
+                        learners real industry experience to build strong,
+                        job-ready skills.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Extra portfolio start -->
+          <div class="container column-gap-lg-4 mt-10">
+            <div class="row justify-content-center">
+              <div class="col-lg-5 mb-7 mx-6">
+                <div
+                  class="portfolio d-flex flex-column gap-5"
+                  data-aos="fade-up"
+                  data-aos-delay="100"
+                  data-aos-duration="1000"
+                >
+                  <div class="portfolio-img position-relative overflow-hidden">
+                    <img
+                      src="../assets/images/portfolio/portfolio-img-5.jpg"
+                      class="img-fluid w-100"
+                      alt=""
+                    />
+                    <div class="portfolio-overlay">
+                      <div class="position-relative">
+                        <p class="ptext">
+                          Full-Stack Development,<br />Python Programming,<br />
+                          AI & Machine Learning,<br />Data Science,<br />
+                          Web Development,<br />UI/UX Design
+                        </p>
+                      </div>
+                      <a
+                        href="projects-detail.html"
+                        class="pbtn round-64 rounded-circle hstack justify-content-center"
+                      >
+                        <iconify-icon
+                          icon="lucide:arrow-up-right"
+                          class="fs-8 text-white"
+                        ></iconify-icon>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="portfolio-details d-flex flex-column">
+                    <h3 class="mb-0" style="color: #0f2440">
+                      Tech & Development
+                    </h3>
+                    <p class="mb-0">Build the future with code</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Extra portfolio end -->
+        </div>
+      </section>
+    </div>
+
+    <!-- footer  --------------------->
+
+    <footer class="footer pt-5 pb-3" style="background-color: #0f2440">
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-5 mb-8 mb-xl-0">
+            <div class="d-flex flex-column gap-8 pe-xl-5">
+              <h2 class="mb-0 text-white">Build something together?</h2>
+              <div class="d-flex flex-column gap-2">
+                <style>
+                  .footer-hover:hover {
+                    color: #ff8100 !important;
+                  }
+                  .footer-hover:hover iconify-icon {
+                    color: #ff8100 !important;
+                  }
+                </style>
+
+                <a
+                  href="https://aspltech.in/"
+                  target="_blank"
+                  class="link-hover hstack gap-3 text-white fs-5 footer-hover"
+                >
+                  <iconify-icon
+                    icon="lucide:arrow-up-right"
+                    class="fs-7 text-white"
+                  ></iconify-icon>
+                  info@aspltech.in
+                </a>
+
+                <a
+                  href="http://bit.ly/480pS6P"
+                  target="_blank"
+                  class="link-hover hstack gap-3 text-white fs-5 footer-hover"
+                >
+                  <iconify-icon
+                    icon="lucide:map-pin"
+                    class="fs-7 text-white"
+                  ></iconify-icon>
+                  ASPL
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-xl-2 mb-8 mb-xl-0">
+            <style>
+              .footer-menu a:hover {
+                color: #ff8100 !important;
+              }
+            </style>
+
+            <ul class="footer-menu list-unstyled mb-0 d-flex flex-column gap-2">
+              <li>
+                <a class="link-hover fs-5 text-white" href="index.html">Home</a>
+              </li>
+              <li>
+                <a class="link-hover fs-5 text-white" href="about-us.html"
+                  >About</a
+                >
+              </li>
+              <li>
+                <a
+                  class="link-hover fs-5 text-white"
+                  id="services"
+                  href="#services"
+                  >Services</a
+                >
+              </li>
+              <li>
+                <a class="link-hover fs-5 text-white" href="careers.html"
+                  >Careers</a
+                >
+              </li>
+              <li>
+                <a class="link-hover fs-5 text-white" href="contact.html"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-4 col-xl-2 mb-8 mb-xl-0">
+            <style>
+              .social-link:hover {
+                color: #ff8100 !important;
+              }
+              .social-link:hover iconify-icon {
+                color: #ff8100 !important;
+              }
+            </style>
+
+            <ul class="footer-menu list-unstyled mb-0 d-flex flex-column gap-2">
+              <a
+                class="link-hover fs-5 text-white d-flex align-items-center gap-2 social-link"
+                href="https://www.linkedin.com/company/aspl-tech-solutions/"
+                target="_blank"
+              >
+                <iconify-icon
+                  icon="mdi:linkedin"
+                  class="fs-5 text-white"
+                ></iconify-icon>
+                LinkedIn
+              </a>
+              <a
+                class="link-hover fs-5 text-white d-flex align-items-center gap-2 social-link"
+                href="https://www.instagram.com/aspltechsolutions?igsh=bnRvNWVwenJ0cHIx&utm_source=qr"
+                target="_blank"
+              >
+                <iconify-icon
+                  icon="mdi:instagram"
+                  class="fs-5 text-white"
+                ></iconify-icon>
+                Instagram
+              </a>
+              <a
+                class="link-hover fs-5 text-white d-flex align-items-center gap-2 social-link"
+                href="https://www.facebook.com/share/1FqnA1k37Y/"
+                target="_blank"
+              >
+                <iconify-icon
+                  icon="mdi:facebook"
+                  class="fs-5 text-white"
+                ></iconify-icon>
+                Facebook
+              </a>
+              <a
+                class="link-hover fs-5 text-white d-flex align-items-center gap-2 social-link"
+                href="https://www.threads.com/@aspltechsolutions"
+                target="_blank"
+              >
+                <iconify-icon
+                  icon="simple-icons:threads"
+                  class="fs-5 text-white"
+                ></iconify-icon>
+                Threads
+              </a>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <hr class="border-white mt-0 mt-md-5" />
+      <p class="text-white text-opacity-70 text-md-center mt-4 text-center">
+        © 2025
+        <a class="text-white" href="https://aspltech.in/" target="_blank"
+          >ASPL</a
+        >
+        Tech Solutions Private Limited. All rights reserved. | Crafted with
+        passion in Bangalore.
+      </p>
+    </footer>
+
+    <div class="floating-buttons">
+      <a
+        href="https://wa.me/919843406360"
+        class="whatsapp-float pulse"
+        target="_blank"
+      >
+        <img
+          src="https://img.icons8.com/color/48/whatsapp.png"
+          alt="WhatsApp"
+        />
+      </a>
+
+      <button
+        class="btn p-2 rounded-circle scroll-btn"
+        id="scrollToTopBtn"
+        style="background-color: #ff8100"
+      >
+        <iconify-icon icon="lucide:arrow-up" class="fs-7" style="color: #fff">
+        </iconify-icon>
+      </button>
+    </div>
+
+    <script src="../assets/libs/jquery/dist/jquery.min.js"></script>
+    <script src="../assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/libs/owl.carousel/dist/owl.carousel.min.js"></script>
+    <script src="../assets/libs/aos-master/dist/aos.js"></script>
+    <script src="../assets/js/custom.js"></script>
+    <!-- solar icons -->
+    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
+  </body>
+</html>
